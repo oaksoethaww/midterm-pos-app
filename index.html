@@ -2,12 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exam-react</title>
+    <meta name="description" content="A simple React point-of-sale application" />
+    <title>Point of Sale</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <!--
+      This entry loads the production bundle so the app also works when the
+      folder is served directly by VS Code Live Server (port 5500).
+      Run `npm run build` after changing the React source.
+    -->
+    <script type="module" crossorigin src="./dist/assets/app.js"></script>
+    <link rel="stylesheet" crossorigin href="./dist/assets/vite-entry.css" />
   </body>
 </html>

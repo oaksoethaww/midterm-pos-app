@@ -1,1 +1,269 @@
-@import "tailwindcss";
+:root {
+  color: #172033;
+  background: #eef2f7;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 64px 24px;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.12), transparent 34%),
+    #eef2f7;
+}
+
+.pos-card {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #e1e7ef;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgba(32, 49, 79, 0.12);
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 26px 30px;
+  border-bottom: 1px solid #e5eaf1;
+}
+
+.heading-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 12px;
+  color: #fff;
+  background: #2563eb;
+}
+
+.card-heading h1 {
+  margin: 0;
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+
+.card-heading p {
+  margin: 5px 0 0;
+  color: #667085;
+  font-size: 0.92rem;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr 130px auto;
+  gap: 18px;
+  align-items: end;
+  padding: 28px 30px 8px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  color: #344054;
+  font-size: 0.84rem;
+  font-weight: 650;
+}
+
+select,
+input {
+  width: 100%;
+  height: 42px;
+  border: 1px solid #cbd3df;
+  border-radius: 8px;
+  padding: 0 12px;
+  color: #172033;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+select:focus,
+input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+input:disabled {
+  cursor: not-allowed;
+  color: #98a2b3;
+  background: #f2f4f7;
+}
+
+.add-button {
+  height: 42px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 20px;
+  color: #fff;
+  background: #2563eb;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.add-button:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.add-button:disabled {
+  cursor: not-allowed;
+  color: #98a2b3;
+  background: #e4e7ec;
+}
+
+.message-row {
+  min-height: 43px;
+  padding: 8px 30px 10px;
+}
+
+.message-row p {
+  margin: 0;
+  font-size: 0.84rem;
+}
+
+.error-message {
+  color: #d92d20;
+  font-weight: 650;
+}
+
+.stock-message {
+  color: #667085;
+}
+
+.table-wrapper {
+  margin: 0 30px;
+  overflow-x: auto;
+  border: 1px solid #d8dee8;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+th,
+td {
+  padding: 13px 14px;
+  border-bottom: 1px solid #e4e8ef;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  color: #475467;
+  background: #f8fafc;
+  font-size: 0.76rem;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:hover td {
+  background: #fafcff;
+}
+
+.item-name {
+  font-weight: 650;
+}
+
+.category-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #2563eb;
+}
+
+.category-cell span {
+  color: #475467;
+}
+
+.empty-state {
+  height: 82px;
+  color: #98a2b3;
+  text-align: center;
+}
+
+.total-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px;
+  padding: 24px 30px 28px;
+  color: #475467;
+}
+
+.total-row strong {
+  min-width: 150px;
+  color: #101828;
+  font-size: 1.35rem;
+  text-align: right;
+}
+
+@media (max-width: 850px) {
+  .page-shell {
+    padding: 28px 14px;
+  }
+
+  .controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .add-button {
+    align-self: end;
+  }
+}
+
+@media (max-width: 560px) {
+  .controls {
+    grid-template-columns: 1fr;
+    padding-inline: 20px;
+  }
+
+  .card-heading {
+    padding-inline: 20px;
+  }
+
+  .message-row {
+    padding-inline: 20px;
+  }
+
+  .table-wrapper {
+    margin-inline: 20px;
+  }
+
+  .total-row {
+    justify-content: space-between;
+    padding-inline: 20px;
+  }
+}

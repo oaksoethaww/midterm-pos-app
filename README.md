@@ -1,8 +1,19 @@
-## CSX4107 Midterm Examination base code
+# Midterm Point of Sale App
 
-This is a base code for CSX4107 Midterm Examination only.
+A React single-page application for selecting products, validating inventory,
+and calculating discounted purchase totals.
 
-### Note:
+## Run locally
 
-- Do not forget to run npm install after cloned.
-- You cannot push back to this project, better delete ".git" directory after cloned and re-initailize it.
+```bash
+npm install
+npm run dev
+```
+
+## Production build
+
+```bash
+npm run build
+```
+
+The application deploys to GitHub Pages automatically after pushes to `main`.
